@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome {{ user.username }}!</h2>
+{% if user.profile_pic %}
+    <img src="{{ user.profile_pic.url }}" alt="Profile Picture">
+{% endif %}
+{% if user.video %}
+    <video controls>
+        <source src="{{ user.video.url }}" type="{{ user.video.content_type }}">
+    </video>
+{% endif %}
+{% endblock %}
